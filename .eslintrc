@@ -1,0 +1,17 @@
+{
+  "extends": [
+    "@antfu/eslint-config-basic",
+    "plugin:react/recommended"
+  ],
+  "settings": {
+    "react": {
+      "version": "17.0"
+    }
+  },
+  "rules": {
+    "no-console": [0],
+    "dot-notation": [0],
+    "react/react-in-jsx-scope": "off",
+    "jsx-quotes": ["error", "prefer-double"]
+  }
+}
