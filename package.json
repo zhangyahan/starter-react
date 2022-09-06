@@ -1,5 +1,5 @@
 {
-  "name": "vite-react-starter",
+  "name": "react-three-demo",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -11,6 +11,10 @@
     "lint:fix": "eslint . --fix"
   },
   "dependencies": {
+    "@react-three/cannon": "^6.4.0",
+    "@react-three/drei": "^9.26.1",
+    "@react-three/fiber": "^8.7.1",
+    "@react-three/postprocessing": "^2.6.2",
     "@reduxjs/toolkit": "^1.8.5",
     "antd": "^4.23.0",
     "axios": "^0.27.2",
