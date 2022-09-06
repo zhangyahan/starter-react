@@ -1,6 +1,9 @@
 /* 
   global style
  */
-html, body, #app {
+html, body, #root {
+  width: 100%;
+  height: 100%;
   font-size: 16px;
+  overflow: hidden;
 }

@@ -1,9 +1,9 @@
 import { useRoutes } from 'react-router-dom'
-import HelloReact from '@/views/HelloReact/HelloReact'
+import Index from '@/views/Index/Index'
 
 export const useCreateRoutes = () => useRoutes([
   {
     path: '/',
-    element: <HelloReact />,
+    element: <Index />,
   },
 ])
