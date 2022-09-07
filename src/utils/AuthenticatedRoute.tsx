@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react'
 import { useLocation, useNavigate } from 'react-router-dom'
 import { useSelector } from 'react-redux'
+import type { LoginUserPermitState } from '@/store/loginUserSlice'
 import { selectLoginUserIsExists, selectLoginUserPermits } from '@/store/loginUserSlice'
 
 /**
@@ -9,9 +10,10 @@ import { selectLoginUserIsExists, selectLoginUserPermits } from '@/store/loginUs
  * @param {Array<String>} permits
  * @returns
  */
-export function requireAuthenticationRoute(Component, permits) {
+export function requireAuthenticationRoute(Component: React.FunctionComponent, permits: string[]) {
   return function AuthenticatedRoute() {
     const location = useLocation()
+    const state = location.state as { prev?: any }
     const navigate = useNavigate()
     /**
      * @type {Array<{name, value, id}>}
@@ -26,9 +28,9 @@ export function requireAuthenticationRoute(Component, permits) {
       }
 
       for (const permit of permits) {
-        const index = loginUserPermits.findIndex(v => v.value === permit)
+        const index = loginUserPermits.findIndex((v: LoginUserPermitState) => v.value === permit)
         if (index <= -1) {
-          navigate(location.state.prev, { state: { prev: '/forbidden' } })
+          navigate(state.prev, { state: { prev: '/forbidden' } })
           return
         }
       }

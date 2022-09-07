@@ -1,5 +1,6 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
+import type { LoginUserPermitState } from '@/store/loginUserSlice'
 import { selectLoginUserIsExists, selectLoginUserPermits } from '@/store/loginUserSlice'
 
 /**
@@ -8,8 +9,8 @@ import { selectLoginUserIsExists, selectLoginUserPermits } from '@/store/loginUs
  * @param {Array<String>} permits
  * @returns
  */
-export function requireAuthenticationComponent(Component, permits) {
-  return function AuthenticatedComponent(props) {
+export function requireAuthenticationComponent(Component: React.FunctionComponent, permits: string[]) {
+  return function AuthenticatedComponent(props: any) {
     const loginUserIsExists = useSelector(selectLoginUserIsExists)
     if (loginUserIsExists)
       return null
@@ -19,7 +20,7 @@ export function requireAuthenticationComponent(Component, permits) {
      */
     const loginUserPermits = useSelector(selectLoginUserPermits)
     for (const permit of permits) {
-      const index = loginUserPermits.findIndex(v => v.value === permit)
+      const index = loginUserPermits.findIndex((v: LoginUserPermitState) => v.value === permit)
       if (index <= -1)
         return null
     }

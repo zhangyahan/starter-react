@@ -1,11 +1,11 @@
 {
   "name": "react-three-demo",
-  "private": true,
-  "version": "0.0.0",
   "type": "module",
+  "version": "0.0.0",
+  "private": true,
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "build": "tsc && vite build",
     "preview": "vite preview",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix"
@@ -29,13 +29,17 @@
   },
   "devDependencies": {
     "@antfu/eslint-config": "^0.26.1",
+    "@types/lodash-es": "^4.17.6",
     "@types/node": "^18.7.15",
     "@types/react": "^18.0.17",
     "@types/react-dom": "^18.0.6",
+    "@types/react-redux": "^7.1.24",
+    "@types/three": "^0.144.0",
     "@vitejs/plugin-react": "^2.0.1",
     "eslint": "^8.23.0",
     "eslint-plugin-react-hooks": "^4.6.0",
     "sass": "^1.54.8",
+    "typescript": "^4.8.2",
     "vite": "^3.0.7"
   }
 }

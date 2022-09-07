@@ -15,7 +15,7 @@ import store from './store'
 moment.locale('zh-cn')
 
 const root = document.getElementById('root')
-createRoot(root)
+createRoot(root!)
   .render(
     <Provider store={store}>
       <React.StrictMode>
