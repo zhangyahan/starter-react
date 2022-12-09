@@ -1,7 +1,6 @@
 {
   "extends": [
-    "@antfu/eslint-config-react",
-    "plugin:react/recommended"
+    "@antfu/eslint-config-react"
   ],
   "settings": {
     "react": {
@@ -9,11 +8,14 @@
     }
   },
   "rules": {
-    "no-console": [1], // 不允许出现 console
+    "no-console": [1], // 不允许出现 console 1 警告
     "dot-notation": [1], // 不允许使用字符串 key 直接 Map 对象.
     "curly": [2, "all"], // if esle esleif while for 不管一行还是多行, 必须存在大括号.
     "brace-style": [2, "stroustrup"],  // if esle esleif while for 不管一行还是多行, 必须换行.
     "jsx-quotes": ["error", "prefer-double"], // jsx 中必须使用双引号
+    "no-use-before-define": "off", // 可以在未定义前使用变量
+    
+    "@typescript-eslint/no-use-before-define": "warn",
 
     "react/react-in-jsx-scope": "off",
     "react/no-unknown-property": [0], // fixed: Unknown property 'xxx' found
