@@ -10,12 +10,4 @@ export default defineConfig({
       '@': path.resolve('./src'),
     },
   },
-  server: {
-    proxy: {
-      '^/api': {
-        target: 'https://httpbin.org/',
-        rewrite: path => path.replace(/^\/api/, ''),
-      },
-    },
-  },
 })

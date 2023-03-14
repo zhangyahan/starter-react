@@ -1,7 +1,7 @@
-import { useCreateRoutes } from '@/routes'
-
 function App() {
-  return useCreateRoutes()
+  return (
+    <div>vite react starter</div>
+  )
 }
 
 export default App
