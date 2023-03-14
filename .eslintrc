@@ -1,6 +1,7 @@
 {
   "extends": [
-    "@antfu/eslint-config-react"
+    "@antfu/eslint-config-react",
+    "plugin:react-hooks/recommended"
   ],
   "settings": {
     "react": {
@@ -9,7 +10,7 @@
   },
   "rules": {
     "no-console": [1], // 不允许出现 console 1 警告
-    "dot-notation": [1], // 不允许使用字符串 key 直接 Map 对象.
+    "dot-notation": [0], // 不允许使用字符串 key 直接 Map 对象.
     "curly": [2, "all"], // if esle esleif while for 不管一行还是多行, 必须存在大括号.
     "brace-style": [2, "stroustrup"],  // if esle esleif while for 不管一行还是多行, 必须换行.
     "jsx-quotes": ["error", "prefer-double"], // jsx 中必须使用双引号
