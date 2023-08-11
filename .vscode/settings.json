@@ -1,6 +1,7 @@
 {
-  "prettier.enable": false,
-  "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": true
-  }
+  "stylelint.validate": [
+    "html",
+    "css",
+    "less"
+  ]
 }

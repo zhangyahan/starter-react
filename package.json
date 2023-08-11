@@ -1,13 +1,25 @@
 {
-  "name": "vite-react-starter",
+  "name": "pkg-name",
+  "version": "0.0.0",
   "type": "module",
-  "version": "1.0.0",
-  "private": true,
+  "packageManager": "npm@8.19.4",
+  "author": "Yahan Zhang <yahan.zg@outlook.com>",
+  "license": "MIT",
+  "homepage": "https://github.com/zhangyahan/pkg-name#readme",
+  "engines": {
+    "node": ">=16.20.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zhangyahan/pkg-name.git"
+  },
+  "bugs": "https://github.com/zhangyahan/pkg-name/issues",
   "scripts": {
+    "prepare": "pnpm simple-git-hooks",
+    "preinstall": "npx only-allow pnpm",
     "dev": "vite",
-    "build": "tsc && vite build",
-    "preview": "vite preview",
-    "lint": "eslint ."
+    "build": "vue-tsc && vite build",
+    "preview": "vite preview"
   },
   "dependencies": {
     "normalize.css": "^8.0.1",
@@ -15,14 +27,47 @@
     "react-dom": "^18.2.0"
   },
   "devDependencies": {
-    "@antfu/eslint-config": "^0.26.1",
-    "@types/node": "^18.7.15",
-    "@types/react": "^18.0.17",
-    "@types/react-dom": "^18.0.6",
-    "@vitejs/plugin-react": "^3.1.0",
-    "eslint": "^8.37.0",
+    "@antfu/eslint-config": "^0.40.2",
+    "@commitlint/cli": "^17.6.7",
+    "@commitlint/config-conventional": "^17.6.7",
+    "@types/node": "^20.4.8",
+    "@vitejs/plugin-react": "^4.0.4",
+    "eslint-config-prettier": "^9.0.0",
+    "eslint-plugin-prettier": "^5.0.0",
     "eslint-plugin-react-hooks": "^4.6.0",
-    "typescript": "^4.8.2",
-    "vite": "^4.1.4"
+    "less": "^4.2.0",
+    "lint-staged": "^13.2.3",
+    "pnpm": "^8.6.12",
+    "postcss-html": "^1.5.0",
+    "postcss-less": "^6.0.0",
+    "prettier": "^3.0.1",
+    "simple-git-hooks": "^2.9.0",
+    "stylelint": "^15.10.2",
+    "stylelint-config-html": "^1.1.0",
+    "stylelint-config-rational-order": "^0.1.2",
+    "stylelint-config-standard": "^34.0.0",
+    "stylelint-order": "^6.0.3",
+    "typescript": "^5.0.2",
+    "vite": "^4.4.5"
+  },
+  "simple-git-hooks": {
+    "pre-commit": "pnpm lint-staged",
+    "preserveUnused": [
+      "commit-msg"
+    ]
+  },
+  "lint-staged": {
+    "*.{js,ts,tsx}": [
+      "prettier --write",
+      "eslint --fix"
+    ],
+    "*.html": [
+      "prettier --write",
+      "stylelint --fix",
+      "eslint --fix"
+    ],
+    "*.{less,css}": [
+      "stylelint --fix"
+    ]
   }
 }
