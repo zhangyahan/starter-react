@@ -68,7 +68,7 @@
       "stylelint --fix",
       "eslint --fix"
     ],
-    "*.{less,css}": [
+    "*.{css,less}": [
       "stylelint --fix"
     ]
   }
