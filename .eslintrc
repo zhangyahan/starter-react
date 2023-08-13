@@ -1,6 +1,10 @@
 {
   "extends": [
-    "@antfu",
-    "plugin:prettier/recommended"
-  ]
+    "@antfu/eslint-config",
+    "plugin:prettier/recommended",
+    "plugin:react-hooks/recommended"
+  ],
+  "rules": {
+    "curly": ["error", "all"]
+  }
 }
