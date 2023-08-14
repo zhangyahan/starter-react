@@ -2,6 +2,7 @@
   "stylelint.validate": [
     "html",
     "css",
-    "less"
+    "less",
+    "scss"
   ]
 }

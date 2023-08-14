@@ -42,13 +42,16 @@
     "pnpm": "^8.6.12",
     "postcss-html": "^1.5.0",
     "postcss-less": "^6.0.0",
+    "postcss-scss": "^4.0.6",
     "prettier": "^3.0.1",
     "simple-git-hooks": "^2.9.0",
     "stylelint": "^15.10.2",
     "stylelint-config-html": "^1.1.0",
     "stylelint-config-rational-order": "^0.1.2",
     "stylelint-config-standard": "^34.0.0",
+    "stylelint-less": "^1.0.8",
     "stylelint-order": "^6.0.3",
+    "stylelint-scss": "^5.1.0",
     "typescript": "^5.0.2",
     "vite": "^4.4.5"
   },
@@ -68,7 +71,7 @@
       "stylelint --fix",
       "eslint --fix"
     ],
-    "*.{css,less}": [
+    "*.{css,less,scss}": [
       "stylelint --fix"
     ]
   }
